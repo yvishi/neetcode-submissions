@@ -1,10 +1,11 @@
 class Solution {
 public:
-    int singleNumber(vector<int>& nums) {
-        int xr=nums[0];
-        for(int i=1;i<nums.size();++i){
-            xr=xr^nums[i];
-        }
-        return xr;
+    int hammingWeight(uint32_t n) {
+       int ans=0;
+       while(n){
+        n=n&(n-1);
+        ans++;
+       }
+       return ans;
     }
 };
